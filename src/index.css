@@ -1,0 +1,38 @@
+.footer{
+  background-color: #1976d2;
+  padding: 1.3rem;
+}
+
+.footer__title{
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffff;
+}
+
+
+.footer__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #888888;
+  --padding-container: 50px 0
+}
+
+.nav--footer{
+  display: grid;
+  gap: 1em;
+  grid-auto-flow: row;
+  height: 100%;
+  text-align: center;
+}
+
+.footer__legend{
+  display: flex;
+  margin: 0;
+  margin-right: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-weight: 500;
+  color: #ffff;
+}
