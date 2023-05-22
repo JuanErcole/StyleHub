@@ -4,9 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useCartStore } from '../hooks/useCartStore';
+import { CartItem } from '../models/models';
+
 
 interface CardItemProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   price: number;
@@ -16,12 +19,20 @@ interface CardItemProps {
 
 export const CardItem = ({ id, title, description,  price, image, isOffer }:CardItemProps) => {
 
+  const { onAddItem } = useCartStore();
+
   const discountedPrice = price + (price * 0.3);
 
+  const item:CartItem = {
+    productId: id,
+    quantity: 1,
+  }
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, minWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 200 }}
         component="img"
         alt="product image"
         height="140"
@@ -48,8 +59,11 @@ export const CardItem = ({ id, title, description,  price, image, isOffer }:Card
               )
         }
       </CardContent>
-      <CardActions>
-        <Button variant='contained'>
+      <CardActions sx={{ display: 'flex', justifyContent: 'end' }}>
+        <Button 
+          variant='contained'
+          onClick={()=> onAddItem(item)}
+        >
           Agregar al carrito
         </Button>
       </CardActions>
