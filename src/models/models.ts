@@ -18,16 +18,7 @@ export interface CartState {
 
 export interface CartItem {
   productId: string;
+  price: number;
   quantity: number;
 }
 
-
-//* MODELO DE CARD
-export interface CardItemProps {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  isOffer: boolean;
-}

@@ -30,7 +30,7 @@ const pages = [
 
 export const NavBar = () => {
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
@@ -44,6 +44,7 @@ const navigate = useNavigate();
 
   const handleClick = (path:string) => {
     navigate(path);
+    handleCloseNavMenu();
   }
 
   return (
@@ -66,7 +67,7 @@ const navigate = useNavigate();
               textDecoration: 'none',
             }}
           >
-            StyleHub
+            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import { useCartStore } from '../hooks/useCartStore';
 import { CartItem } from '../models/models';
 
-
 interface CardItemProps {
   id: string;
   title: string;
@@ -25,6 +24,7 @@ export const CardItem = ({ id, title, description,  price, image, isOffer }:Card
 
   const item:CartItem = {
     productId: id,
+    price: price,
     quantity: 1,
   }
 

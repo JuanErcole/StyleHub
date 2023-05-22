@@ -23,7 +23,7 @@ export const ProductPage = () => {
         textAlign='center'
       >
         <Typography  
-          variant='h2'
+          variant='h3'
           color='secondary'
           fontWeight={700}
         >
