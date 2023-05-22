@@ -48,20 +48,21 @@ export const CartPages = () => {
           ))
       }
 
-      <Grid >
-        <Typography 
-          variant="h4"
-          fontWeight={700}
-        >
-          Total: ${totalAmount}
-        </Typography>
-      </Grid>
-
-      <Grid item xs={12}>
-        <Button color="secondary" variant="contained" >
-          Finalizar compra
-        </Button>
-      </Grid>
+      {
+        (items.length !== 0) &&
+          <Grid >
+            <Typography 
+              variant="h4"
+              fontWeight={700}
+            >
+              Total: ${totalAmount}
+            </Typography>      
+            <Button color="secondary" variant="contained" >
+              Finalizar compra
+            </Button>
+          </Grid>
+          
+      }
 
     </Grid>
   )

@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useProductStore } from "../../hooks/useProductStore";
 import Typography from '@mui/material/Typography';
 
@@ -31,7 +31,7 @@ export const CardItemCart = ({ productId, price, quantity }: CardItemCartProps) 
           Precio unitario ${price}
         </Typography>
       </Grid>
-      
+
     </Grid>
   )
 }
