@@ -2,11 +2,22 @@ import Grid from '@mui/material/Grid'
 import { Hero } from '../components/Hero';
 import { OnSale } from '../components/OnSale';
 import { Reviews } from '../components/Reviews';
+import { useCartStore } from '../../hooks/useCartStore';
+import { useEffect } from 'react';
 
 
 
 
 export const HomePage = () => {
+
+  const { loadCart } = useCartStore();
+
+  const id = 1;
+
+  useEffect(() => {
+    loadCart(id)
+  }, [])
+  
 
   return (
 

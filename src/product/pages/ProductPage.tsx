@@ -8,10 +8,10 @@ import { CardItem } from "../../components/CardItem";
 
 export const ProductPage = () => {
   
-  const { products, startLoadingProducts } = useProductStore();
+  const { products, loadingProducts } = useProductStore();
   
   useEffect(() => {
-    startLoadingProducts();
+    loadingProducts();
   }, [])
   
 
@@ -22,7 +22,8 @@ export const ProductPage = () => {
         xs={12}
         textAlign='center'
       >
-        <Typography  
+        <Typography
+          py={4}  
           variant='h3'
           color='secondary'
           fontWeight={700}
@@ -48,7 +49,7 @@ export const ProductPage = () => {
               title={product.name}
               description={product.description}
               price={product.price}
-              image='https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+              image={product.imgUrl}
               isOffer={product.is_offer}
             />
           ))

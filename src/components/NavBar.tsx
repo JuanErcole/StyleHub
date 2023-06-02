@@ -137,7 +137,7 @@ export const NavBar = () => {
             ))}
           </Box>
 
-          <CartIcon/>
+          <CartIcon />
         </Toolbar>
       </Container>
     </AppBar>

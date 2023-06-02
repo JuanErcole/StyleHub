@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../store/store";
 import { addItem } from "../store/cart/cartSlice";
 import { CartItem } from "../models/models";
+import axios from "../api/axios";
 
 export const useCartStore = () => {
 
@@ -13,13 +14,28 @@ export const useCartStore = () => {
     dispatch( addItem(cartItem) )
   }
 
+  const loadCart = async(id: number) => {
+
+    try {
+      const { data } = await axios.get(`/cart/${id}`);
+      
+      console.log(data);
+
+    } catch (error) {
+      
+    }
+
+    
+  }
+
   return {
     //*Propiedades
     items,
 
 
     //*Metodos
-    onAddItem
+    onAddItem,
+    loadCart
 
   }
 }

@@ -2,8 +2,9 @@
 
 //* MODELO DE PRODUCTO (Item)
 export interface Product {
-  id: string;
+  id?: number;
   name: string;
+  imgUrl: string;
   description: string;
   price: number;
   is_offer: boolean;
@@ -17,7 +18,7 @@ export interface CartState {
 }
 
 export interface CartItem {
-  productId: string;
+  productId: number;
   price: number;
   quantity: number;
 }

@@ -3,12 +3,13 @@ import Typography from '@mui/material/Typography';
 import { useCartStore } from "../../hooks/useCartStore";
 import { EmptyCart } from "../components/EmptyCart";
 import { CardItemCart } from "../components/CardItemCart";
+import { useEffect } from "react";
 
 
 
 export const CartPages = () => {
 
-  const { items } = useCartStore();
+  const { items } = useCartStore();  
   
   const totalAmount = items.reduce((total, item) => total + (item.price * item.quantity), 0);
   console.log(totalAmount);
